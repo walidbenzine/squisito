@@ -1,0 +1,42 @@
+
+{
+  "header": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "gallery": "Galleria",
+    "reviews": "Recensioni",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "slogan": "Mangiare come in Italia!",
+    "subtitle": "Drogheria e gastronomia italiana"
+  },
+  "about": {
+    "title": "Chi siamo",
+    "description": "Squisito è una drogheria e gastronomia italiana nel cuore di Parigi. Offriamo prodotti di qualità e piatti preparati con passione dal nostro chef. Il nostro negozio propone ogni giorno ricette diverse, sempre preparate con prodotti freschi e di stagione.",
+    "freshFood": "I nostri piatti sono preparati quotidianamente",
+    "dailyMenu": "Il nostro menu cambia ogni giorno per offrirvi sapori sempre nuovi",
+    "qualityProducts": "Selezioniamo attentamente i nostri prodotti per garantirvi una qualità eccezionale"
+  },
+  "gallery": {
+    "title": "La nostra galleria",
+    "subtitle": "Scoprite i nostri prodotti e piatti preparati"
+  },
+  "reviews": {
+    "title": "Cosa dicono i nostri clienti",
+    "viewMore": "Vedi più recensioni su Google Maps"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "address": "Indirizzo",
+    "phone": "Telefono",
+    "hours": "Orari",
+    "schedule": {
+      "monClosed": "Lunedì: Chiuso",
+      "tueThu": "Martedì a Giovedì: 09:30–19:00",
+      "fri": "Venerdì: 09:30–20:30",
+      "sat": "Sabato: 10:30–20:30",
+      "sunClosed": "Domenica: Chiuso"
+    }
+  }
+}

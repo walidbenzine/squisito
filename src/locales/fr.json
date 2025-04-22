@@ -1,0 +1,42 @@
+
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "gallery": "Galerie",
+    "reviews": "Avis",
+    "contact": "Contact"
+  },
+  "hero": {
+    "slogan": "Manger comme en Italie !",
+    "subtitle": "Épicerie italienne et traiteur"
+  },
+  "about": {
+    "title": "À propos de Squisito",
+    "description": "Squisito est une épicerie italienne et traiteur située au cœur de Paris. Nous proposons des produits de qualité et des plats préparés avec passion par notre chef. Notre établissement vous propose chaque jour des recettes différentes, toujours préparées avec des produits frais et de saison.",
+    "freshFood": "Nos plats sont préparés quotidiennement",
+    "dailyMenu": "Notre menu change chaque jour pour vous offrir des saveurs toujours nouvelles",
+    "qualityProducts": "Nous sélectionnons attentivement nos produits pour vous garantir une qualité exceptionnelle"
+  },
+  "gallery": {
+    "title": "Notre galerie",
+    "subtitle": "Découvrez nos produits et plats préparés"
+  },
+  "reviews": {
+    "title": "Ce que nos clients disent",
+    "viewMore": "Voir plus d'avis sur Google Maps"
+  },
+  "contact": {
+    "title": "Nous contacter",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "hours": "Horaires",
+    "schedule": {
+      "monClosed": "Lundi: Fermé",
+      "tueThu": "Mardi au Jeudi: 09:30–19:00",
+      "fri": "Vendredi: 09:30–20:30",
+      "sat": "Samedi: 10:30–20:30",
+      "sunClosed": "Dimanche: Fermé"
+    }
+  }
+}

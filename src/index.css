@@ -50,6 +50,13 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  
+  /* Couleurs italiennes */
+  :root {
+    --italian-red: 4 86% 58%;
+    --italian-green: 122 39% 49%;
+    --italian-white: 0 0% 100%;
+  }
 
   .dark {
     --background: 222.2 84% 4.9%;
@@ -97,5 +104,35 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+  }
+}
+
+/* Classes personnalisées pour le style italien */
+@layer components {
+  .italian-flag-gradient {
+    @apply bg-gradient-to-r from-italian-green via-italian-white to-italian-red;
+  }
+
+  .italian-shadow {
+    box-shadow: 0 10px 25px -5px rgba(0, 100, 0, 0.1), 0 10px 10px -5px rgba(255, 0, 0, 0.05);
+  }
+
+  .section-divider {
+    @apply relative my-16;
+  }
+
+  .section-divider::before {
+    content: "";
+    @apply absolute left-0 top-1/2 w-full h-px bg-gray-200;
+  }
+
+  .section-divider::after {
+    content: "🇮🇹";
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4;
   }
 }

@@ -19,6 +19,12 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Couleurs italiennes
+				italian: {
+					red: '#E63946',
+					green: '#4CAF50',
+					white: '#FFFFFF'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
