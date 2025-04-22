@@ -16,7 +16,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div 
           className="w-full h-full bg-cover bg-center bg-fixed italian-wave" 
           style={{ 
-            backgroundImage: "url('/lovable-uploads/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png')", 
+            backgroundImage: "url('/squisito/lovable-uploads/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png')", 
           }}
         >
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
@@ -25,9 +25,9 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
       <div className="container mx-auto px-4 relative z-10 text-center animate-fadeInUp">
         <img 
-          src="/lovable-uploads/abca8ec2-85a6-4f60-ac1d-e4cd61fd38a6.png" 
+          src="/squisito/lovable-uploads/logo.png" 
           alt="Squisito Logo" 
-          className="mx-auto h-32 mb-6 hover-scale-elegant" 
+          className="mx-auto h-32 mb-6 hover-scale-elegant rounded-full" 
         />
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
           Squisito
@@ -51,13 +51,6 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           >
             {t('header.contact')}
           </Button>
-        </div>
-
-        <div 
-          onClick={() => scrollToSection('about')} 
-          className="scroll-indicator text-white absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce hover:text-italian-green transition-colors"
-        >
-          <ChevronDown className="w-8 h-8" />
         </div>
       </div>
     </section>

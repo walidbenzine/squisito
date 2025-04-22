@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { Flag } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 
 interface HeaderProps {
   scrollToSection: (sectionId: string) => void;
@@ -40,13 +40,13 @@ const Header = ({ scrollToSection }: HeaderProps) => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/abca8ec2-85a6-4f60-ac1d-e4cd61fd38a6.png" 
+            src="/squisito/lovable-uploads/logo.png" 
             alt="Squisito Logo" 
-            className="h-12 mr-4" 
+            className="h-12 mr-4 rounded-full" 
           />
         </div>
         
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-2">
           <Button 
             variant="ghost" 
             onClick={() => scrollToSection('home')}
@@ -83,50 +83,24 @@ const Header = ({ scrollToSection }: HeaderProps) => {
             {t('header.contact')}
           </Button>
           
-          <Button 
-            onClick={toggleLanguage}
-            className="rounded-full p-2 overflow-hidden ml-4"
-            variant="outline"
-          >
-            <div className="relative w-6 h-6">
+          <div className="relative w-8 h-8" onClick={toggleLanguage}>
               {currentLanguage === 'fr' ? (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-full h-2 bg-italian-green" style={{ position: 'absolute', top: '33%', left: 0 }}></div>
-                  <div className="w-full h-2 bg-italian-white" style={{ position: 'absolute', top: '0%', left: 0 }}></div>
-                  <div className="w-full h-2 bg-italian-red" style={{ position: 'absolute', top: '66%', left: 0 }}></div>
-                </div>
+                <img src="/squisito/lovable-uploads/it-flag.webp" className="rounded-full w-8 h-8"></img>
               ) : (
-                <div className="absolute inset-0 flex flex-col">
-                  <div className="flex-1 bg-blue-700"></div>
-                  <div className="flex-1 bg-white"></div>
-                  <div className="flex-1 bg-red-600"></div>
-                </div>
+                <img src="/squisito/lovable-uploads/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
               )}
-            </div>
-          </Button>
+          </div>
         </nav>
-        
-        {/* Menu mobile */}
+
         <div className="md:hidden flex items-center">
-          <Button 
-            variant="ghost"
-            onClick={toggleLanguage}
-            className="rounded-full p-2 overflow-hidden mr-2"
-          >
-            <Flag className="h-5 w-5" />
-          </Button>
-          <Button 
-            variant="outline"
-            onClick={() => {
-              // Implémentation du menu mobile si nécessaire
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </Button>
+          <div className="relative w-8 h-8" onClick={toggleLanguage}>
+              {currentLanguage === 'fr' ? (
+                <img src="/squisito/lovable-uploads/it-flag.webp" className="rounded-full w-8 h-8"></img>
+              ) : (
+                <img src="/squisito/lovable-uploads/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
+              )}
+          </div>
+          <MobileMenu scrollToSection={scrollToSection} />
         </div>
       </div>
     </header>

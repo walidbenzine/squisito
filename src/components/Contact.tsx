@@ -7,73 +7,6 @@ import { Instagram, Phone } from 'lucide-react';
 
 const Contact = () => {
   const { t } = useTranslation();
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Fonction pour charger la carte Google Maps
-    const initMap = () => {
-      if (!mapRef.current) return;
-
-      // Coordonnées de Squisito
-      const squisitoLocation = { lat: 48.882618, lng: 2.321355 }; // 16 Bd des Batignolles, 75017 Paris
-
-      const map = new google.maps.Map(mapRef.current, {
-        center: squisitoLocation,
-        zoom: 16,
-        mapTypeControl: false,
-      });
-
-      // Ajouter un marqueur pour Squisito
-      const marker = new google.maps.Marker({
-        position: squisitoLocation,
-        map: map,
-        title: 'Squisito - Épicerie italienne et traiteur',
-        animation: google.maps.Animation.DROP,
-      });
-
-      // Ajouter un event listener pour rediriger vers Google Maps au clic
-      marker.addListener('click', () => {
-        window.open('https://maps.app.goo.gl/pShhdG1LPZx2nYVr9', '_blank');
-      });
-
-      // Optionnel : Info window au survol du marqueur
-      const infowindow = new google.maps.InfoWindow({
-        content: `
-          <div class="p-2">
-            <h3 class="font-bold">Squisito</h3>
-            <p>16 Bd des Batignolles, 75017 Paris</p>
-          </div>
-        `,
-      });
-
-      marker.addListener('mouseover', () => {
-        infowindow.open(map, marker);
-      });
-
-      marker.addListener('mouseout', () => {
-        infowindow.close();
-      });
-    };
-
-    // Charger l'API Google Maps
-    const loadGoogleMapsAPI = () => {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=&callback=initGoogleMap`;
-      script.async = true;
-      script.defer = true;
-      
-      // Définir la fonction de callback globalement
-      (window as any).initGoogleMap = initMap;
-      document.head.appendChild(script);
-    };
-
-    loadGoogleMapsAPI();
-
-    // Cleanup
-    return () => {
-      (window as any).initGoogleMap = undefined;
-    };
-  }, []);
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -83,11 +16,11 @@ const Contact = () => {
           <div className="h-1 w-24 bg-italian-green mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
           <div>
             <Card className="h-full shadow-lg">
               <CardContent className="p-6">
-                <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div>
                     <h3 className="text-xl font-semibold text-italian-green mb-2">{t('contact.address')}</h3>
                     <p className="text-gray-700">16 Bd des Batignolles, 75017 Paris</p>
@@ -151,16 +84,6 @@ const Contact = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div>
-            <div 
-              ref={mapRef} 
-              className="h-96 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              style={{ width: '100%' }}
-              onClick={() => window.open('https://maps.app.goo.gl/pShhdG1LPZx2nYVr9', '_blank')}
-            />
-            <p className="text-sm text-gray-500 mt-2 text-center italic">Cliquez sur la carte pour ouvrir dans Google Maps</p>
           </div>
         </div>
       </div>
