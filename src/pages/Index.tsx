@@ -17,15 +17,17 @@ const Index = () => {
   const [galleryRef, galleryVisible] = useIntersectionObserver();
   const [reviewsRef, reviewsVisible] = useIntersectionObserver();
   const [contactRef, contactVisible] = useIntersectionObserver();
+  
+  const homeRef = useRef(null);
 
   // Fonction pour scroller vers une section
   const scrollToSection = (sectionId: string) => {
     const sectionRefs: { [key: string]: React.RefObject<HTMLElement> } = {
-      'home': useRef(null),
-      'about': aboutRef,
-      'gallery': galleryRef,
-      'reviews': reviewsRef,
-      'contact': contactRef
+      'home': homeRef,
+      'about': aboutRef as React.RefObject<HTMLElement>,
+      'gallery': galleryRef as React.RefObject<HTMLElement>,
+      'reviews': reviewsRef as React.RefObject<HTMLElement>,
+      'contact': contactRef as React.RefObject<HTMLElement>
     };
 
     const ref = sectionRefs[sectionId];
@@ -52,21 +54,23 @@ const Index = () => {
       <Header scrollToSection={scrollToSection} />
       
       <main>
-        <Hero scrollToSection={scrollToSection} />
+        <div ref={homeRef}>
+          <Hero scrollToSection={scrollToSection} />
+        </div>
         
-        <section ref={aboutRef} className={`section-appear ${aboutVisible ? 'visible' : ''}`}>
+        <section ref={aboutRef as React.RefObject<HTMLElement>} className={`section-appear ${aboutVisible ? 'visible' : ''}`}>
           <About />
         </section>
         
-        <section ref={galleryRef} className={`section-appear ${galleryVisible ? 'visible' : ''}`}>
+        <section ref={galleryRef as React.RefObject<HTMLElement>} className={`section-appear ${galleryVisible ? 'visible' : ''}`}>
           <Gallery />
         </section>
         
-        <section ref={reviewsRef} className={`section-appear ${reviewsVisible ? 'visible' : ''}`}>
+        <section ref={reviewsRef as React.RefObject<HTMLElement>} className={`section-appear ${reviewsVisible ? 'visible' : ''}`}>
           <Reviews />
         </section>
         
-        <section ref={contactRef} className={`section-appear ${contactVisible ? 'visible' : ''}`}>
+        <section ref={contactRef as React.RefObject<HTMLElement>} className={`section-appear ${contactVisible ? 'visible' : ''}`}>
           <Contact />
         </section>
       </main>

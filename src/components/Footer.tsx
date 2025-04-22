@@ -20,7 +20,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
               className="h-16 mb-4" 
             />
             <p className="text-gray-400 max-w-xs">
-              Épicerie italienne et traiteur de qualité au cœur de Paris.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -92,7 +92,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Squisito. Tous droits réservés.
+            &copy; {currentYear} Squisito. {t('footer.copyright')}
           </p>
           <div className="flex space-x-4">
             <a 

@@ -38,5 +38,9 @@
       "sat": "Sabato: 10:30–20:30",
       "sunClosed": "Domenica: Chiuso"
     }
+  },
+  "footer": {
+    "description": "Drogheria e gastronomia italiana di qualità nel cuore di Parigi.",
+    "copyright": "Tutti i diritti riservati."
   }
 }

@@ -55,7 +55,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
         <div 
           onClick={() => scrollToSection('about')} 
-          className="scroll-indicator text-white"
+          className="scroll-indicator text-white absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce hover:text-italian-green transition-colors"
         >
           <ChevronDown className="w-8 h-8" />
         </div>

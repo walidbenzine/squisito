@@ -38,5 +38,9 @@
       "sat": "Samedi: 10:30–20:30",
       "sunClosed": "Dimanche: Fermé"
     }
+  },
+  "footer": {
+    "description": "Épicerie italienne et traiteur de qualité au cœur de Paris.",
+    "copyright": "Tous droits réservés."
   }
 }
