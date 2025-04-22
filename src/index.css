@@ -110,9 +110,29 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
   }
+
+  /* Animations personnalisées */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-/* Classes personnalisées pour le style italien */
 @layer components {
   .italian-flag-gradient {
     @apply bg-gradient-to-r from-italian-green via-italian-white to-italian-red;
@@ -134,5 +154,43 @@
   .section-divider::after {
     content: "🇮🇹";
     @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4;
+  }
+
+  .section-appear {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .section-appear.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hover-scale-elegant {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .italian-wave {
+    background: linear-gradient(-45deg, #E63946, #fff, #4CAF50);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .scroll-indicator {
+    @apply absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer;
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

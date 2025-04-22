@@ -1,6 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   scrollToSection: (sectionId: string) => void;
@@ -13,20 +14,20 @@ const Hero = ({ scrollToSection }: HeroProps) => {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-cover bg-center" 
+          className="w-full h-full bg-cover bg-center bg-fixed italian-wave" 
           style={{ 
             backgroundImage: "url('/lovable-uploads/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png')", 
-            opacity: 0.8
           }}
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
+        >
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10 text-center animate-fadeInUp">
         <img 
           src="/lovable-uploads/abca8ec2-85a6-4f60-ac1d-e4cd61fd38a6.png" 
           alt="Squisito Logo" 
-          className="mx-auto h-32 mb-6" 
+          className="mx-auto h-32 mb-6 hover-scale-elegant" 
         />
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
           Squisito
@@ -40,23 +41,23 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div className="flex gap-4 justify-center">
           <Button 
             onClick={() => scrollToSection('about')}
-            className="bg-italian-green hover:bg-italian-green/90 text-white px-6 py-3 rounded-md"
+            className="bg-italian-green hover:bg-italian-green/90 text-white px-6 py-3 rounded-md hover-scale-elegant"
           >
             {t('header.about')}
           </Button>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="bg-italian-red hover:bg-italian-red/90 text-white px-6 py-3 rounded-md"
+            className="bg-italian-red hover:bg-italian-red/90 text-white px-6 py-3 rounded-md hover-scale-elegant"
           >
             {t('header.contact')}
           </Button>
         </div>
 
-        {/* Décoration aux couleurs italiennes */}
-        <div className="absolute bottom-0 left-0 right-0 h-6 flex">
-          <div className="flex-1 bg-italian-green"></div>
-          <div className="flex-1 bg-italian-white"></div>
-          <div className="flex-1 bg-italian-red"></div>
+        <div 
+          onClick={() => scrollToSection('about')} 
+          className="scroll-indicator text-white"
+        >
+          <ChevronDown className="w-8 h-8" />
         </div>
       </div>
     </section>

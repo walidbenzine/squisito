@@ -1,5 +1,7 @@
+
 import { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -11,17 +13,15 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const { i18n } = useTranslation();
   
-  // Référencer les sections pour le scroll
-  const homeRef = useRef<HTMLElement>(null);
-  const aboutRef = useRef<HTMLElement>(null);
-  const galleryRef = useRef<HTMLElement>(null);
-  const reviewsRef = useRef<HTMLElement>(null);
-  const contactRef = useRef<HTMLElement>(null);
+  const [aboutRef, aboutVisible] = useIntersectionObserver();
+  const [galleryRef, galleryVisible] = useIntersectionObserver();
+  const [reviewsRef, reviewsVisible] = useIntersectionObserver();
+  const [contactRef, contactVisible] = useIntersectionObserver();
 
   // Fonction pour scroller vers une section
   const scrollToSection = (sectionId: string) => {
     const sectionRefs: { [key: string]: React.RefObject<HTMLElement> } = {
-      'home': homeRef,
+      'home': useRef(null),
       'about': aboutRef,
       'gallery': galleryRef,
       'reviews': reviewsRef,
@@ -30,8 +30,7 @@ const Index = () => {
 
     const ref = sectionRefs[sectionId];
     if (ref && ref.current) {
-      // Ajouter un offset pour le header
-      const yOffset = -80; 
+      const yOffset = -80;
       const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
       
       window.scrollTo({
@@ -41,11 +40,8 @@ const Index = () => {
     }
   };
 
-  // Gérer le changement de langue dans le document
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-    
-    // Mettre à jour le titre de la page
     document.title = i18n.language === 'fr' 
       ? 'Squisito - Épicerie italienne et traiteur' 
       : 'Squisito - Drogheria e gastronomia italiana';
@@ -56,19 +52,21 @@ const Index = () => {
       <Header scrollToSection={scrollToSection} />
       
       <main>
-        <section ref={homeRef}>
-          <Hero scrollToSection={scrollToSection} />
-        </section>
-        <section ref={aboutRef}>
+        <Hero scrollToSection={scrollToSection} />
+        
+        <section ref={aboutRef} className={`section-appear ${aboutVisible ? 'visible' : ''}`}>
           <About />
         </section>
-        <section ref={galleryRef}>
+        
+        <section ref={galleryRef} className={`section-appear ${galleryVisible ? 'visible' : ''}`}>
           <Gallery />
         </section>
-        <section ref={reviewsRef}>
+        
+        <section ref={reviewsRef} className={`section-appear ${reviewsVisible ? 'visible' : ''}`}>
           <Reviews />
         </section>
-        <section ref={contactRef}>
+        
+        <section ref={contactRef} className={`section-appear ${contactVisible ? 'visible' : ''}`}>
           <Contact />
         </section>
       </main>

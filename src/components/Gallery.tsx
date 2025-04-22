@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
@@ -74,39 +73,34 @@ const Gallery = () => {
           {galleryItems.map((item) => (
             <Dialog key={item.id}>
               <DialogTrigger asChild>
-                <Card className="overflow-hidden shadow-md cursor-pointer transform transition hover:scale-105 hover:shadow-xl">
+                <Card className="overflow-hidden shadow-md cursor-pointer hover-scale-elegant">
                   <CardContent className="p-0">
                     <div className="relative aspect-square">
                       <img 
                         src={item.src} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         onClick={() => setSelectedImage(item)}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-3">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                         <p className="text-white text-sm font-medium">{item.alt}</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="max-w-3xl">
+              <DialogContent className="max-w-3xl bg-white/95 backdrop-blur-sm">
                 <div className="w-full h-full">
                   <img 
                     src={item.src} 
                     alt={item.alt} 
                     className="w-full h-auto max-h-[calc(100vh-200px)] object-contain"
                   />
-                  <p className="mt-2 text-center text-gray-700">{item.alt}</p>
+                  <p className="mt-4 text-center text-gray-700 font-medium">{item.alt}</p>
                 </div>
               </DialogContent>
             </Dialog>
           ))}
-        </div>
-
-        {/* Place pour d'autres images */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 italic">Plus de photos à venir...</p>
         </div>
       </div>
     </section>
