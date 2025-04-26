@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  branch: netlify
+
+local_backend: false
+
+publish_mode: editorial_workflow
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "translations"
+    label: "Traductions"
+    files:
+      - label: "Français"
+        name: "fr"
+        file: "src/locales/fr.json"
+        format: "json"
+        fields:
+          - label: "Traductions"
+            name: "translations"
+            widget: "object"
+            fields:
+              - { label: "Bienvenue", name: "welcome", widget: "string" }
+              - { label: "Connexion", name: "login", widget: "string" }
+              - { label: "Déconnexion", name: "logout", widget: "string" }
+
+      - label: "Anglais"
+        name: "en"
+        file: "src/locales/en.json"
+        format: "json"
+        fields:
+          - label: "Traductions"
+            name: "translations"
+            widget: "object"
+            fields:
+              - { label: "Bienvenue", name: "welcome", widget: "string" }
+              - { label: "Connexion", name: "login", widget: "string" }
+              - { label: "Déconnexion", name: "logout", widget: "string" }
+
+      - label: "Italien"
+        name: "it"
+        file: "src/locales/it.json"
+        format: "json"
+        fields:
+          - label: "Traductions"
+            name: "translations"
+            widget: "object"
+            fields:
+              - { label: "Bienvenue", name: "welcome", widget: "string" }
+              - { label: "Connexion", name: "login", widget: "string" }
+              - { label: "Déconnexion", name: "logout", widget: "string" }
