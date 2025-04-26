@@ -15,7 +15,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <img 
-              src="/squisito/lovable-uploads/logo.png" 
+              src="/logo.png" 
               alt="Squisito Logo" 
               className="h-16 mb-4 rounded-full" 
             />

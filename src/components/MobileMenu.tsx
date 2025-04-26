@@ -38,7 +38,7 @@ const MobileMenu = ({ scrollToSection }: MobileMenuProps) => {
         <SheetHeader>
           <SheetTitle className="text-center">
             <img 
-              src="/squisito/lovable-uploads/logo.png" 
+              src="/logo.png" 
               alt="Squisito Logo" 
               className="h-12 mx-auto mb-4 rounded-full" 
             />

@@ -45,7 +45,7 @@ const About = () => {
             <Card className="overflow-hidden shadow-lg transform transition hover:scale-105">
               <CardContent className="p-0">
                 <img 
-                  src="/squisito/lovable-uploads/319698b8-30ff-4b52-b3f4-715cb81da6ef.png" 
+                  src="/319698b8-30ff-4b52-b3f4-715cb81da6ef.png" 
                   alt="Sandwiches italiens" 
                   className="w-full h-64 object-cover"
                 />
@@ -54,7 +54,7 @@ const About = () => {
             <Card className="overflow-hidden shadow-lg transform transition hover:scale-105">
               <CardContent className="p-0">
                 <img 
-                  src="/squisito/lovable-uploads/4dad984b-c8e5-4888-93e7-d2b2b70db193.png" 
+                  src="/4dad984b-c8e5-4888-93e7-d2b2b70db193.png" 
                   alt="Comptoir Squisito" 
                   className="w-full h-64 object-cover"
                 />
@@ -63,7 +63,7 @@ const About = () => {
             <Card className="overflow-hidden shadow-lg transform transition hover:scale-105">
               <CardContent className="p-0">
                 <img 
-                  src="/squisito/lovable-uploads/588104db-6038-4edc-a1e2-1bae0cc40b56.png" 
+                  src="/588104db-6038-4edc-a1e2-1bae0cc40b56.png" 
                   alt="Gâteau au chocolat" 
                   className="w-full h-64 object-cover"
                 />
@@ -72,7 +72,7 @@ const About = () => {
             <Card className="overflow-hidden shadow-lg transform transition hover:scale-105">
               <CardContent className="p-0">
                 <img 
-                  src="/squisito/lovable-uploads/6192bb77-5981-4340-946b-843928f265a8.png" 
+                  src="/6192bb77-5981-4340-946b-843928f265a8.png" 
                   alt="Pizzas" 
                   className="w-full h-64 object-cover"
                 />
