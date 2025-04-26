@@ -2,52 +2,205 @@ backend:
   name: git-gateway
   branch: netlify
 
-local_backend: false
-
-publish_mode: editorial_workflow
-
-media_folder: "public/assets"
-public_folder: "/assets"
+media_folder: "public"
+public_folder: "/"
 
 collections:
-  - name: "translations"
+  - name: "locales"
     label: "Traductions"
+    label_singular: "Traduction"
+    delete: false
+    editor:
+      preview: false
     files:
-      - label: "Français"
+      - file: "public/locales/fr.json"
+        label: "Français"
         name: "fr"
-        file: "src/locales/fr.json"
-        format: "json"
         fields:
-          - label: "Traductions"
-            name: "translations"
+          - label: "Header"
+            name: "header"
             widget: "object"
             fields:
-              - { label: "Bienvenue", name: "welcome", widget: "string" }
-              - { label: "Connexion", name: "login", widget: "string" }
-              - { label: "Déconnexion", name: "logout", widget: "string" }
-
-      - label: "Anglais"
+              - { label: "Accueil", name: "home", widget: "string" }
+              - { label: "À propos", name: "about", widget: "string" }
+              - { label: "Galerie", name: "gallery", widget: "string" }
+              - { label: "Avis", name: "reviews", widget: "string" }
+              - { label: "Contact", name: "contact", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Slogan", name: "slogan", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - label: "À propos"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Plats frais", name: "freshFood", widget: "string" }
+              - { label: "Menu du jour", name: "dailyMenu", widget: "string" }
+              - { label: "Produits de qualité", name: "qualityProducts", widget: "string" }
+          - label: "Galerie"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - label: "Avis"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Voir plus", name: "viewMore", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Adresse", name: "address", widget: "string" }
+              - { label: "Téléphone", name: "phone", widget: "string" }
+              - { label: "Horaires", name: "hours", widget: "string" }
+              - label: "Horaires détaillés"
+                name: "schedule"
+                widget: "object"
+                fields:
+                  - { label: "Lundi", name: "monClosed", widget: "string" }
+                  - { label: "Mardi-Jeudi", name: "tueThu", widget: "string" }
+                  - { label: "Vendredi", name: "fri", widget: "string" }
+                  - { label: "Samedi", name: "sat", widget: "string" }
+                  - { label: "Dimanche", name: "sunClosed", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      - file: "public/locales/en.json"
+        label: "English"
         name: "en"
-        file: "src/locales/en.json"
-        format: "json"
         fields:
-          - label: "Traductions"
-            name: "translations"
+          - label: "Header"
+            name: "header"
             widget: "object"
             fields:
-              - { label: "Bienvenue", name: "welcome", widget: "string" }
-              - { label: "Connexion", name: "login", widget: "string" }
-              - { label: "Déconnexion", name: "logout", widget: "string" }
-
-      - label: "Italien"
+              - { label: "Home", name: "home", widget: "string" }
+              - { label: "About", name: "about", widget: "string" }
+              - { label: "Gallery", name: "gallery", widget: "string" }
+              - { label: "Reviews", name: "reviews", widget: "string" }
+              - { label: "Contact", name: "contact", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Slogan", name: "slogan", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Fresh Food", name: "freshFood", widget: "string" }
+              - { label: "Daily Menu", name: "dailyMenu", widget: "string" }
+              - { label: "Quality Products", name: "qualityProducts", widget: "string" }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Reviews"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "View More", name: "viewMore", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Hours", name: "hours", widget: "string" }
+              - label: "Detailed Schedule"
+                name: "schedule"
+                widget: "object"
+                fields:
+                  - { label: "Monday", name: "monClosed", widget: "string" }
+                  - { label: "Tuesday-Thursday", name: "tueThu", widget: "string" }
+                  - { label: "Friday", name: "fri", widget: "string" }
+                  - { label: "Saturday", name: "sat", widget: "string" }
+                  - { label: "Sunday", name: "sunClosed", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      - file: "public/locales/it.json"
+        label: "Italiano"
         name: "it"
-        file: "src/locales/it.json"
-        format: "json"
         fields:
-          - label: "Traductions"
-            name: "translations"
+          - label: "Header"
+            name: "header"
             widget: "object"
             fields:
-              - { label: "Bienvenue", name: "welcome", widget: "string" }
-              - { label: "Connexion", name: "login", widget: "string" }
-              - { label: "Déconnexion", name: "logout", widget: "string" }
+              - { label: "Home", name: "home", widget: "string" }
+              - { label: "Chi siamo", name: "about", widget: "string" }
+              - { label: "Galleria", name: "gallery", widget: "string" }
+              - { label: "Recensioni", name: "reviews", widget: "string" }
+              - { label: "Contatti", name: "contact", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Slogan", name: "slogan", widget: "string" }
+              - { label: "Sottotitolo", name: "subtitle", widget: "string" }
+          - label: "Chi siamo"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Descrizione", name: "description", widget: "text" }
+              - { label: "Piatti freschi", name: "freshFood", widget: "string" }
+              - { label: "Menu giornaliero", name: "dailyMenu", widget: "string" }
+              - { label: "Prodotti di qualità", name: "qualityProducts", widget: "string" }
+          - label: "Galleria"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Sottotitolo", name: "subtitle", widget: "string" }
+          - label: "Recensioni"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Vedi più", name: "viewMore", widget: "string" }
+          - label: "Contatti"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Indirizzo", name: "address", widget: "string" }
+              - { label: "Telefono", name: "phone", widget: "string" }
+              - { label: "Orari", name: "hours", widget: "string" }
+              - label: "Orari dettagliati"
+                name: "schedule"
+                widget: "object"
+                fields:
+                  - { label: "Lunedì", name: "monClosed", widget: "string" }
+                  - { label: "Martedì-Giovedì", name: "tueThu", widget: "string" }
+                  - { label: "Venerdì", name: "fri", widget: "string" }
+                  - { label: "Sabato", name: "sat", widget: "string" }
+                  - { label: "Domenica", name: "sunClosed", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Descrizione", name: "description", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
