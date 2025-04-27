@@ -1,0 +1,46 @@
+{
+    "header": {
+      "home": "Home",
+      "about": "About",
+      "gallery": "Gallery",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "hero": {
+      "slogan": "Eat like in Italy!",
+      "subtitle": "Italian grocery store and catering service"
+    },
+    "about": {
+      "title": "About Squisito",
+      "description": "Squisito is an Italian grocery store and catering service located in the heart of Paris. We offer high-quality products and dishes prepared with passion by our chef. Every day, we offer different recipes, always made with fresh and seasonal ingredients.",
+      "freshFood": "Our dishes are prepared daily",
+      "dailyMenu": "Our menu changes daily to offer you new flavors",
+      "qualityProducts": "We carefully select our products to guarantee exceptional quality"
+    },
+    "gallery": {
+      "title": "Our Gallery",
+      "subtitle": "Discover our products and prepared dishes"
+    },
+    "reviews": {
+      "title": "What our customers say",
+      "viewMore": "See more reviews on Google Maps"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Address",
+      "phone": "Phone",
+      "hours": "Opening Hours",
+      "schedule": {
+        "monClosed": "Monday: Closed",
+        "tueThu": "Tuesday to Thursday: 09:30–19:00",
+        "fri": "Friday: 09:30–20:30",
+        "sat": "Saturday: 10:30–20:30",
+        "sunClosed": "Sunday: Closed"
+      }
+    },
+    "footer": {
+      "description": "High-quality Italian grocery store and catering service in the heart of Paris.",
+      "copyright": "All rights reserved."
+    }
+  }
+  

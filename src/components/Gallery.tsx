@@ -20,42 +20,42 @@ const Gallery = () => {
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      src: "/squisito/lovable-uploads/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png",
+      src: "/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png",
       alt: "Devanture Squisito avec chef"
     },
     {
       id: 2,
-      src: "/squisito/lovable-uploads/319698b8-30ff-4b52-b3f4-715cb81da6ef.png",
+      src: "/319698b8-30ff-4b52-b3f4-715cb81da6ef.png",
       alt: "Sandwiches italiens"
     },
     {
       id: 3,
-      src: "/squisito/lovable-uploads/4dad984b-c8e5-4888-93e7-d2b2b70db193.png",
+      src: "/4dad984b-c8e5-4888-93e7-d2b2b70db193.png",
       alt: "Comptoir Squisito"
     },
     {
       id: 4,
-      src: "/squisito/lovable-uploads/588104db-6038-4edc-a1e2-1bae0cc40b56.png",
+      src: "/588104db-6038-4edc-a1e2-1bae0cc40b56.png",
       alt: "Gâteau au chocolat"
     },
     {
       id: 5,
-      src: "/squisito/lovable-uploads/6192bb77-5981-4340-946b-843928f265a8.png",
+      src: "/6192bb77-5981-4340-946b-843928f265a8.png",
       alt: "Pizzas"
     },
     {
       id: 6,
-      src: "/squisito/lovable-uploads/72ffb6ab-b664-49dd-8d3e-e4f368be8a59.png",
+      src: "/72ffb6ab-b664-49dd-8d3e-e4f368be8a59.png",
       alt: "Chef présentant ses sandwiches"
     },
     {
       id: 7,
-      src: "/squisito/lovable-uploads/fa9d063c-b651-480d-b7ee-2e0654aaba1e.png",
+      src: "/fa9d063c-b651-480d-b7ee-2e0654aaba1e.png",
       alt: "Sélection de vins italiens"
     },
     {
       id: 8,
-      src: "/squisito/lovable-uploads/1331d8f2-95f5-49cc-abe2-fdd4a05aee1d.png",
+      src: "/1331d8f2-95f5-49cc-abe2-fdd4a05aee1d.png",
       alt: "Logo Squisito sur vitrine"
     }
   ];

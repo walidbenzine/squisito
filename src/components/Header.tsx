@@ -24,7 +24,7 @@ const Header = ({ scrollToSection }: HeaderProps) => {
 
   // Fonction pour changer de langue
   const toggleLanguage = () => {
-    const newLanguage = currentLanguage === 'fr' ? 'it' : 'fr';
+    const newLanguage = currentLanguage === 'fr' ? 'it' : currentLanguage === 'it'? 'en' : 'fr';
     i18n.changeLanguage(newLanguage);
     setCurrentLanguage(newLanguage);
   };
@@ -40,7 +40,7 @@ const Header = ({ scrollToSection }: HeaderProps) => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="/squisito/lovable-uploads/logo.png" 
+            src="/logo.png" 
             alt="Squisito Logo" 
             className="h-12 mr-4 rounded-full" 
           />
@@ -85,9 +85,11 @@ const Header = ({ scrollToSection }: HeaderProps) => {
           
           <div className="relative w-8 h-8" onClick={toggleLanguage}>
               {currentLanguage === 'fr' ? (
-                <img src="/squisito/lovable-uploads/it-flag.webp" className="rounded-full w-8 h-8"></img>
+                <img src="/it-flag.webp" className="rounded-full w-8 h-8"></img>
+              ) : currentLanguage === 'it' ? (
+                <img src="/en-flag.png" className="rounded-full w-8 h-8"></img>
               ) : (
-                <img src="/squisito/lovable-uploads/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
+                <img src="/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
               )}
           </div>
         </nav>
@@ -95,9 +97,11 @@ const Header = ({ scrollToSection }: HeaderProps) => {
         <div className="md:hidden flex items-center">
           <div className="relative w-8 h-8" onClick={toggleLanguage}>
               {currentLanguage === 'fr' ? (
-                <img src="/squisito/lovable-uploads/it-flag.webp" className="rounded-full w-8 h-8"></img>
+                <img src="/it-flag.webp" className="rounded-full w-8 h-8"></img>
+              ) : currentLanguage === 'it' ? (
+                <img src="/en-flag.png" className="rounded-full w-8 h-8"></img>
               ) : (
-                <img src="/squisito/lovable-uploads/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
+                <img src="/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
               )}
           </div>
           <MobileMenu scrollToSection={scrollToSection} />
