@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: netlify
+  branch: main
 
 media_folder: "public"
 public_folder: "/"
