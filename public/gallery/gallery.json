@@ -1,0 +1,52 @@
+{
+    "gallery": [
+        {
+          "image": "/gallery/Chef-présentant-ses-sandwiches.png",
+          "alt_fr": "Chef présentant ses sandwichs",
+          "alt_en": "Italian Chef presenting his sandwiches",
+          "alt_it": "Cuoco italiano che presenta i suoi panini"
+        },
+        {
+          "image": "/gallery/comptoir-squisito.png",
+          "alt_fr": "Comptoir Squisito",
+          "alt_en": "Squisito Counter",
+          "alt_it": "Banco Squisito"
+        },
+        {
+            "image": "/gallery/devanture-squisito-avec-chef.png",
+            "alt_fr": "Devanture Squisito avec Chef",
+            "alt_en": "Squisito storefront with Chef",
+            "alt_it": "Vetrina Squisito con Chef"
+        },
+        {
+            "image": "/gallery/gâteau-au-chocolat.png",
+            "alt_fr": "Gâteau au chocolat",
+            "alt_en": "Chocolate cake",
+            "alt_it": "Torta al cioccolato"
+        },
+        {
+            "image": "/gallery/Logo-Squisito-sur-vitrine.png",
+            "alt_fr": "Logo Squisito sur vitrine",
+            "alt_en": "Squisito logo on storefront",
+            "alt_it": "Logo Squisito su vetrina"
+        },
+        {
+            "image": "/gallery/pizzas.png",
+            "alt_fr": "Pizzas",
+            "alt_en": "Pizzas",
+            "alt_it": "Pizze"
+        },
+        {
+            "image": "/gallery/sandwish-italiens.png",
+            "alt_fr": "Sandwish italiens",
+            "alt_en": "Italian sandwiches",
+            "alt_it": "Panini italiani"
+        },
+        {
+            "image": "/gallery/Sélection-de-vins-italiens.png",
+            "alt_fr": "Sélection de vins italiens",
+            "alt_en": "Selection of Italian wines",
+            "alt_it": "Selezione di vini italiani"
+        }
+    ] 
+}

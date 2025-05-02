@@ -7,6 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { useState } from 'react';
 
 interface MobileMenuProps {
   scrollToSection: (sectionId: string) => void;
@@ -14,13 +15,15 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ scrollToSection }: MobileMenuProps) => {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false); 
 
   const handleNavigation = (sectionId: string) => {
     scrollToSection(sectionId);
+    setOpen(false);
   };
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button 
           variant="ghost"

@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Dialog,
-  DialogContent,
-  DialogTrigger
-} from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+
+interface GalleryMeta {
+  image: string;
+  alt_fr: string;
+  alt_en: string;
+  alt_it: string;
+}
 
 interface GalleryItem {
   id: number;
@@ -14,51 +17,31 @@ interface GalleryItem {
 }
 
 const Gallery = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const currentLang = i18n.language;
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
-  const galleryItems: GalleryItem[] = [
-    {
-      id: 1,
-      src: "/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png",
-      alt: "Devanture Squisito avec chef"
-    },
-    {
-      id: 2,
-      src: "/319698b8-30ff-4b52-b3f4-715cb81da6ef.png",
-      alt: "Sandwiches italiens"
-    },
-    {
-      id: 3,
-      src: "/4dad984b-c8e5-4888-93e7-d2b2b70db193.png",
-      alt: "Comptoir Squisito"
-    },
-    {
-      id: 4,
-      src: "/588104db-6038-4edc-a1e2-1bae0cc40b56.png",
-      alt: "Gâteau au chocolat"
-    },
-    {
-      id: 5,
-      src: "/6192bb77-5981-4340-946b-843928f265a8.png",
-      alt: "Pizzas"
-    },
-    {
-      id: 6,
-      src: "/72ffb6ab-b664-49dd-8d3e-e4f368be8a59.png",
-      alt: "Chef présentant ses sandwiches"
-    },
-    {
-      id: 7,
-      src: "/fa9d063c-b651-480d-b7ee-2e0654aaba1e.png",
-      alt: "Sélection de vins italiens"
-    },
-    {
-      id: 8,
-      src: "/1331d8f2-95f5-49cc-abe2-fdd4a05aee1d.png",
-      alt: "Logo Squisito sur vitrine"
-    }
-  ];
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const res = await fetch('/gallery/gallery.json');
+        const data: any = await res.json();
+
+        const items: GalleryItem[] = data.gallery.map((meta, index) => ({
+          id: index + 1,
+          src: meta.image,
+          alt: meta[`alt_${currentLang}` as keyof GalleryMeta] || meta.alt_en || '',
+        }));
+
+        setGalleryItems(items);
+      } catch (err) {
+        console.error('Erreur lors du chargement de la galerie :', err);
+      }
+    };
+
+    fetchGallery();
+  }, [currentLang]);
 
   return (
     <section id="gallery" className="py-20 bg-white">
@@ -70,7 +53,7 @@ const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {galleryItems.map((item) => (
+          {galleryItems?.map((item) => (
             <Dialog key={item.id}>
               <DialogTrigger asChild>
                 <Card className="overflow-hidden shadow-md cursor-pointer hover-scale-elegant">

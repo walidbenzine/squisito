@@ -7,8 +7,8 @@ public_folder: "/"
 
 collections:
   - name: "locales"
-    label: "Traductions"
-    label_singular: "Traduction"
+    label: "Textes"
+    label_singular: "Texte"
     delete: false
     editor:
       preview: false
@@ -204,3 +204,59 @@ collections:
             fields:
               - { label: "Descrizione", name: "description", widget: "string" }
               - { label: "Copyright", name: "copyright", widget: "string" }
+
+  - name: "gallery"
+    label: "Galerie"
+    folder: "public/gallery"
+    create: false
+    slug: "{{slug}}"
+    files:
+      - file: "public/gallery/gallery.json"
+        label: "Galerie"
+        name: "gallery_json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            summary: "{{fields.alt_fr}}"
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                media_library:
+                  config:
+                    multiple: false
+              - label: "Nom en français"
+                name: "alt_fr"
+                widget: "string"
+              - label: "Nom en anglais"
+                name: "alt_en"
+                widget: "string"
+              - label: "Nom en italien"
+                name: "alt_it"
+                widget: "string"
+
+  - name: "about"
+    label: "À propos"
+    files:
+      - file: "public/about/images.json"
+        label: "Galerie"
+        name: "gallery"
+        format: "json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            allow_add: false
+            collapsed: false
+            min: 4
+            max: 4
+            summary: "{{fields.image}}"
+            field:
+              label: "Image"
+              name: "image"
+              widget: "image"
+              media_folder: "/public/about"
+              public_folder: "/about"

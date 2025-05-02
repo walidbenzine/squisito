@@ -85,23 +85,23 @@ const Header = ({ scrollToSection }: HeaderProps) => {
           
           <div className="relative w-8 h-8" onClick={toggleLanguage}>
               {currentLanguage === 'fr' ? (
-                <img src="/it-flag.webp" className="rounded-full w-8 h-8"></img>
+                <img src="/it-flag.png" className="rounded-full w-8 h-8"></img>
               ) : currentLanguage === 'it' ? (
                 <img src="/en-flag.png" className="rounded-full w-8 h-8"></img>
               ) : (
-                <img src="/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
+                <img src="/fr-flag.png" className="rounded-full w-8 h-8"></img>
               )}
           </div>
         </nav>
 
         <div className="md:hidden flex items-center">
-          <div className="relative w-8 h-8" onClick={toggleLanguage}>
+          <div className="relative w-8 h-8 mr-2" onClick={toggleLanguage}>
               {currentLanguage === 'fr' ? (
-                <img src="/it-flag.webp" className="rounded-full w-8 h-8"></img>
+                <img src="/it-flag.png" className="rounded-full w-8 h-8"></img>
               ) : currentLanguage === 'it' ? (
                 <img src="/en-flag.png" className="rounded-full w-8 h-8"></img>
               ) : (
-                <img src="/fr-flag.jpg" className="rounded-full w-8 h-8"></img>
+                <img src="/fr-flag.png" className="rounded-full w-8 h-8"></img>
               )}
           </div>
           <MobileMenu scrollToSection={scrollToSection} />

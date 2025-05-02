@@ -16,7 +16,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div 
           className="w-full h-full bg-cover bg-center bg-fixed italian-wave" 
           style={{ 
-            backgroundImage: "url('/1a8e2b68-64ae-4d83-8f3f-ac01c4cc0a9a.png')", 
+            backgroundImage: "url('/couverture.png')", 
           }}
         >
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
