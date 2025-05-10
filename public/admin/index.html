@@ -9,5 +9,21 @@
 
     <div id="nc-root"></div>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+    <script>
+      CMS.registerPreviewTemplate("gallery", ({ entry }) => {
+        const images = entry.getIn(["data", "images"]) || [];
+        return (
+          <div>
+            {images.map((img, i) => (
+              <div key={i} style={{ marginBottom: "1rem" }}>
+                <img src={img.get("image")} alt={img.get("alt_fr")} style={{ width: "100px" }} />
+                <p>{img.get("alt_fr")}</p>
+              </div>
+            ))}
+          </div>
+        );
+      });
+    </script>
   </body>
 </html>

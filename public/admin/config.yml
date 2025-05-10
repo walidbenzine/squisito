@@ -292,17 +292,17 @@ collections:
             allow_add: true
             collapsed: false
             min: 1
-            summary: "{{fields.image}}"
+            summary: "{{fields.alt_fr}}"
             fields:
               - label: "Image"
                 name: "image"
                 widget: "image"
-                media_folder: "/public/gallery"  # Chemin vers le dossier de stockage
-                public_folder: "/gallery"  # URL publique pour accéder aux images
+                media_folder: "/public/gallery"
+                public_folder: "/gallery"
               - label: "Nom en français"
                 name: "alt_fr"
                 widget: "string"
-                default: "Image en français"  # Valeur par défaut si aucun texte n'est saisi
+                default: "Image en français"
               - label: "Nom en anglais"
                 name: "alt_en"
                 widget: "string"

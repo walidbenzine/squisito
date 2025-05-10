@@ -28,7 +28,7 @@ const Menu = () => {
         const res = await fetch('/menu/menu.json');
         const data: any = await res.json();
 
-        const items: GalleryItem[] = data.gallery.map((meta, index) => ({
+        const items: GalleryItem[] = data.images.map((meta, index) => ({
           id: index + 1,
           src: meta.image,
           alt: meta[`alt_${currentLang}` as keyof GalleryMeta] || meta.alt_en || '',
