@@ -1,0 +1,10 @@
+{
+    "gallery": [
+        {
+          "image": "/menu/menu.jpg",
+          "alt_fr": "Menu du jour",
+          "alt_en": "Daily menu",
+          "alt_it": "Menu del giorno"
+        }
+    ] 
+}

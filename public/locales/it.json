@@ -2,6 +2,7 @@
 {
   "header": {
     "home": "Home",
+    "menu": "Menu",
     "about": "Chi siamo",
     "gallery": "Galleria",
     "reviews": "Recensioni",
@@ -10,6 +11,10 @@
   "hero": {
     "slogan": "Mangiare come in Italia!",
     "subtitle": "Drogheria e gastronomia italiana"
+  },
+  "menu": {
+    "title": "Il menu del giorno",
+    "description": "Scoprite il nostro menu del giorno, preparato con ingredienti freschi e di stagione. Il nostro chef propone una varietà di piatti che cambiano ogni giorno per offrirvi nuovi sap"
   },
   "about": {
     "title": "Chi siamo",

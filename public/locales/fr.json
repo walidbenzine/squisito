@@ -1,6 +1,7 @@
 {
   "header": {
     "home": "Accueil",
+    "menu": "Menu",
     "about": "À propos",
     "gallery": "Galerie",
     "reviews": "Avis",
@@ -9,6 +10,10 @@
   "hero": {
     "slogan": "Manger comme en Italie !",
     "subtitle": "Épicerie italienne et traiteur"
+  },
+  "menu": {
+    "title": "Le menu du jour",
+    "description": "Découvrez notre menu du jour, préparé avec des ingrédients frais et de saison. Notre chef propose une variété de plats qui changent chaque jour pour vous offrir de nouvelles saveurs. Visitez-nous pour déguster nos spécialités et profiter de la cuisine italienne authentique."
   },
   "about": {
     "title": "À propos de Squisito",

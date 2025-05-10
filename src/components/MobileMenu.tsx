@@ -57,6 +57,13 @@ const MobileMenu = ({ scrollToSection }: MobileMenuProps) => {
           </Button>
           <Button 
             variant="ghost" 
+            onClick={() => handleNavigation('menu')}
+            className="text-italian-green hover:text-italian-red w-full justify-start font-medium text-lg"
+          >
+            {t('header.menu')}
+          </Button>
+          <Button 
+            variant="ghost" 
             onClick={() => handleNavigation('about')}
             className="text-italian-green hover:text-italian-red w-full justify-start font-medium text-lg"
           >

@@ -56,6 +56,13 @@ const Header = ({ scrollToSection }: HeaderProps) => {
           </Button>
           <Button 
             variant="ghost" 
+            onClick={() => scrollToSection('menu')}
+            className="text-italian-green hover:text-italian-red font-medium"
+          >
+            {t('header.menu')}
+          </Button>
+          <Button 
+            variant="ghost" 
             onClick={() => scrollToSection('about')}
             className="text-italian-green hover:text-italian-red font-medium"
           >

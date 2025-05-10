@@ -1,6 +1,7 @@
 {
     "header": {
       "home": "Home",
+      "menu": "Menu",
       "about": "About",
       "gallery": "Gallery",
       "reviews": "Reviews",
@@ -9,6 +10,10 @@
     "hero": {
       "slogan": "Eat like in Italy!",
       "subtitle": "Italian grocery store and catering service"
+    },
+    "menu": {
+      "title": "The daily menu",
+      "description": "Discover our daily menu, prepared with fresh and seasonal ingredients. Our chef offers a variety of dishes that change every day to offer you new flavors. Visit us to taste our specialties and enjoy the authentic Italian cuisine."
     },
     "about": {
       "title": "About Squisito",

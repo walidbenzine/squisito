@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Menu from '@/components/Menu';
 import About from '@/components/About';
 import Gallery from '@/components/Gallery';
 import Reviews from '@/components/Reviews';
@@ -13,6 +14,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const { i18n } = useTranslation();
   
+  const [menuRef, menuVisible] = useIntersectionObserver();
   const [aboutRef, aboutVisible] = useIntersectionObserver();
   const [galleryRef, galleryVisible] = useIntersectionObserver();
   const [reviewsRef, reviewsVisible] = useIntersectionObserver();
@@ -24,6 +26,7 @@ const Index = () => {
   const scrollToSection = (sectionId: string) => {
     const sectionRefs: { [key: string]: React.RefObject<HTMLElement> } = {
       'home': homeRef,
+      'menu': menuRef as React.RefObject<HTMLElement>,
       'about': aboutRef as React.RefObject<HTMLElement>,
       'gallery': galleryRef as React.RefObject<HTMLElement>,
       'reviews': reviewsRef as React.RefObject<HTMLElement>,
@@ -57,6 +60,10 @@ const Index = () => {
         <div ref={homeRef}>
           <Hero scrollToSection={scrollToSection} />
         </div>
+
+        <section ref={menuRef as React.RefObject<HTMLElement>} className={`section-appear ${menuVisible ? 'visible' : ''}`}>
+          <Menu />
+        </section>
         
         <section ref={aboutRef as React.RefObject<HTMLElement>} className={`section-appear ${aboutVisible ? 'visible' : ''}`}>
           <About />
