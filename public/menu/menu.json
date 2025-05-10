@@ -1,10 +1,16 @@
 {
-    "images": [
-        {
-          "image": "/menu/menu.jpg",
-          "alt_fr": "Menu du jour",
-          "alt_en": "Daily menu",
-          "alt_it": "Menu del giorno"
-        }
-    ] 
+  "images": [
+    {
+      "image": "/menu/menu.jpg",
+      "alt_fr": "Menu du jour",
+      "alt_en": "Daily menu",
+      "alt_it": "Menu del giorno"
+    },
+    {
+      "alt_fr": "Gatêau",
+      "alt_en": "Cake",
+      "alt_it": "Mamamia",
+      "image": "/menu/sandwish-italiens.png"
+    }
+  ]
 }
