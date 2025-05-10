@@ -205,39 +205,6 @@ collections:
               - { label: "Descrizione", name: "description", widget: "string" }
               - { label: "Copyright", name: "copyright", widget: "string" }
 
-  - name: "gallery"
-    label: "Galerie"
-    folder: "public/gallery"
-    create: false
-    slug: "{{slug}}"
-    files:
-      - file: "public/gallery/gallery.json"
-        label: "Galerie"
-        name: "gallery_json"
-        fields:
-          - label: "Images"
-            name: "images"
-            widget: "list"
-            allow_add: true
-            collapsed: false
-            summary: "{{fields.alt_fr}}"
-            fields:
-              - label: "Image"
-                name: "image"
-                widget: "image"
-                media_library:
-                  config:
-                    multiple: false
-              - label: "Nom en français"
-                name: "alt_fr"
-                widget: "string"
-              - label: "Nom en anglais"
-                name: "alt_en"
-                widget: "string"
-              - label: "Nom en italien"
-                name: "alt_it"
-                widget: "string"
-
   - name: "about"
     label: "À propos"
     files:
@@ -260,3 +227,36 @@ collections:
               widget: "image"
               media_folder: "/public/about"
               public_folder: "/about"
+
+  - name: "gallery"
+    label: "Galerie"
+    files:
+      - file: "public/gallery/gallery.json"
+        label: "Galerie"
+        name: "gallery_json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            min: 1
+            summary: "{{fields.image}}"
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                media_folder: "/public/gallery"  # Chemin vers le dossier de stockage
+                public_folder: "/gallery"  # URL publique pour accéder aux images
+              - label: "Nom en français"
+                name: "alt_fr"
+                widget: "string"
+                default: "Image en français"  # Valeur par défaut si aucun texte n'est saisi
+              - label: "Nom en anglais"
+                name: "alt_en"
+                widget: "string"
+                default: "Image in English"
+              - label: "Nom en italien"
+                name: "alt_it"
+                widget: "string"
+                default: "Immagine in italiano"
