@@ -52,7 +52,7 @@ const Menu = () => {
           <div className="h-1 w-24 bg-italian-green mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,600px))] gap-6 justify-center">
           {galleryItems?.map((item) => (
             <Dialog key={item.id}>
               <DialogTrigger asChild>

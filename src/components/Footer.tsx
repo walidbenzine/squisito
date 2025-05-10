@@ -12,7 +12,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
   return (
     <footer className="bg-gray-900 text-white py-10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between gap-100px items-center">
           <div className="mb-6 md:mb-0">
             <img 
               src="/logo.png" 
@@ -24,11 +24,11 @@ const Footer = ({ scrollToSection }: FooterProps) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:gap-16">
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-italian-green">Navigation</h3>
-              <ul className="space-y-2">
-                <li>
+          <div className="gap-8 sm:gap-16 max-w-fit flex flex-row">
+            <div className="max-w-fit">
+              <h3 className="max-w-fit text-lg font-semibold mb-4 text-italian-green">Navigation</h3>
+              <ul className="space-y-2 max-w-fit">
+                <li className="max-w-fit">
                   <button 
                     onClick={() => scrollToSection('home')}
                     className="text-gray-400 hover:text-italian-red transition-colors"
@@ -36,7 +36,15 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {t('header.home')}
                   </button>
                 </li>
-                <li>
+                <li  className="max-w-fit">
+                  <button 
+                    onClick={() => scrollToSection('menu')}
+                    className="text-gray-400 hover:text-italian-red transition-colors"
+                  >
+                    {t('header.menu')}
+                  </button>
+                </li>
+                <li  className="max-w-fit">
                   <button 
                     onClick={() => scrollToSection('about')}
                     className="text-gray-400 hover:text-italian-red transition-colors"
@@ -44,7 +52,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {t('header.about')}
                   </button>
                 </li>
-                <li>
+                <li  className="max-w-fit">
                   <button 
                     onClick={() => scrollToSection('gallery')}
                     className="text-gray-400 hover:text-italian-red transition-colors"
@@ -52,12 +60,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {t('header.gallery')}
                   </button>
                 </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-italian-green">Liens</h3>
-              <ul className="space-y-2">
-                <li>
+                <li  className="max-w-fit">
                   <button 
                     onClick={() => scrollToSection('reviews')}
                     className="text-gray-400 hover:text-italian-red transition-colors"
@@ -65,7 +68,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {t('header.reviews')}
                   </button>
                 </li>
-                <li>
+                <li  className="max-w-fit">
                   <button 
                     onClick={() => scrollToSection('contact')}
                     className="text-gray-400 hover:text-italian-red transition-colors"
@@ -73,7 +76,12 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {t('header.contact')}
                   </button>
                 </li>
-                <li>
+              </ul>
+            </div>
+            <div className="max-w-fit">
+              <h3 className="max-w-fit text-lg font-semibold mb-4 text-italian-green">Liens</h3>
+              <ul className="max-w-fit space-y-2 ">
+                <li className="max-w-fit">
                   <a 
                     href="https://maps.app.goo.gl/pShhdG1LPZx2nYVr9" 
                     target="_blank" 
@@ -81,6 +89,26 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     className="text-gray-400 hover:text-italian-red transition-colors"
                   >
                     Google Maps
+                  </a>
+                </li>
+                <li  className="max-w-fit">
+                  <a 
+                    href="https://www.instagram.com/squisito.paris17e/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-italian-red transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li  className="max-w-fit">
+                  <a 
+                    href="https://www.tiktok.com/@squisito.paris17e" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-italian-red transition-colors"
+                  >
+                    TikTok
                   </a>
                 </li>
               </ul>
@@ -94,24 +122,6 @@ const Footer = ({ scrollToSection }: FooterProps) => {
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
             &copy; {currentYear} Squisito. {t('footer.copyright')}
           </p>
-          <div className="flex space-x-4">
-            <a 
-              href="https://www.instagram.com/squisito.paris17e/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-italian-red transition-colors"
-            >
-              Instagram
-            </a>
-            <a 
-              href="https://www.tiktok.com/@squisito.paris17e" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-italian-red transition-colors"
-            >
-              TikTok
-            </a>
-          </div>
         </div>
 
         {/* Bande aux couleurs de l'Italie */}

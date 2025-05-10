@@ -1,7 +1,6 @@
 
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   scrollToSection: (sectionId: string) => void;
@@ -14,7 +13,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-cover bg-center bg-fixed italian-wave" 
+          className="w-full h-full bg-cover bg-center bg-fixed italian-wave max-w-screen max-h-screen" 
           style={{ 
             backgroundImage: "url('/couverture.png')", 
           }}
