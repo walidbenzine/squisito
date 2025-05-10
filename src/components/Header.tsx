@@ -33,8 +33,8 @@ const Header = ({ scrollToSection }: HeaderProps) => {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 shadow-md py-2' 
-          : 'bg-transparent py-4'
+          ? 'bg-white/90 shadow-md py-2 text-black' 
+          : 'bg-transparent py-4 text-white'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">

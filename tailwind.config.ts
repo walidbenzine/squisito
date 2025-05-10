@@ -83,6 +83,10 @@ export default {
 						height: 'var(--radix-accordion-content-height)'
 					}
 				},
+				'zoomInOut': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' },
+				},
 				'accordion-up': {
 					from: {
 						height: 'var(--radix-accordion-content-height)'
@@ -94,7 +98,8 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'zoom-in-out': 'zoomInOut 3s ease-in-out infinite',
 			}
 		}
 	},

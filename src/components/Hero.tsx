@@ -12,14 +12,11 @@ const Hero = ({ scrollToSection }: HeroProps) => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-fixed italian-wave max-w-screen max-h-screen" 
-          style={{ 
-            backgroundImage: "url('/couverture.png')", 
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-        </div>
+      <div 
+        className="w-full h-full bg-cover bg-center bg-no-repeat animate-zoom-in-out" 
+        style={{ backgroundImage: "url('/couverture.png')" }}
+      />
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center animate-fadeInUp">
